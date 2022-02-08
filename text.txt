@@ -1,0 +1,30 @@
+data:
+ba: "after"
+days: "10"
+drug_name: "Atorva Tablets"
+img_back: "MP_medicineDB/MP_medicineDB_2/Tablet/Atorva Tablets_Zydus Healthcare_Zydus Medica_Back.JPG"
+img_front: "MP_medicineDB/MP_medicineDB_2/Tablet/Atorva Tablets_Zydus Healthcare_Zydus Medica_Front.JPG"
+img_name: "MP_medicineDB/MP_medicineDB_2/Tablet/Atorva Tablets_Zydus Healthcare_Zydus Medica_Name.JPG"
+patientId: "60efb3be62512a00158190ca"
+quantity: "5"
+spcl_intr: ""
+time: Array(1)
+0: "Morning"
+length: 1
+[[Prototype]]: Array(0)
+type: "Tablet"
+
+ba: "after"
+days: "15"
+drug_name: "Ambrican 5"
+img_back: "MP_medicineDB/MP_medicineDB_2/Tablet/Ambrican 5_MSN Lab_Lupin_Back.JPG"
+img_front: "MP_medicineDB/MP_medicineDB_2/Tablet/Ambrican 5_MSN Lab_Lupin_Front.JPG"
+img_name: "MP_medicineDB/MP_medicineDB_2/Tablet/Ambrican 5_MSN Lab_Lupin_Name.JPG"
+patientId: "60efb3be62512a00158190ca"
+quantity: "2"
+spcl_intr: ""
+time: (2) ['Morning', 'Evening']
+type: "Tablet"
+
+[{'id': '1644298130617', 'data': {'patientId': '60efb3be62512a00158190ca', 'drug_name': 'Atorva Tablets', 'type': 'Tablet', 'time': ['Morning'], 'quantity': '5', 'ba': 'after', 'days': '10', 'img_front': 'MP_medicineDB/MP_medicineDB_2/Tablet/Atorva Tablets_Zydus Healthcare_Zydus Medica_Front.JPG', 'img_back': 'MP_medicineDB/MP_medicineDB_2/Tablet/Atorva Tablets_Zydus Healthcare_Zydus Medica_Back.JPG', 'img_name': 'MP_medicineDB/MP_medicineDB_2/Tablet/Atorva Tablets_Zydus Healthcare_Zydus Medica_Name.JPG', 'spcl_intr': ''}}, 
+{'id': '1644299142113', 'data': {'patientId': '60efb3be62512a00158190ca', 'drug_name': 'Ambrican 5', 'type': 'Tablet', 'time': ['Morning', 'Evening'], 'quantity': '2', 'ba': 'after', 'days': '15', 'img_front': 'MP_medicineDB/MP_medicineDB_2/Tablet/Ambrican 5_MSN Lab_Lupin_Front.JPG', 'img_back': 'MP_medicineDB/MP_medicineDB_2/Tablet/Ambrican 5_MSN Lab_Lupin_Back.JPG', 'img_name': 'MP_medicineDB/MP_medicineDB_2/Tablet/Ambrican 5_MSN Lab_Lupin_Name.JPG', 'spcl_intr': ''}}]
