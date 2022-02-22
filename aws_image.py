@@ -3,6 +3,8 @@ from PIL import Image, ImageDraw, ImageFont
 import io
 import os
 from dotenv import load_dotenv
+from image import buildImage
+from text_script import text_script
 
 load_dotenv()
 
@@ -15,27 +17,23 @@ def import_image(props):
                   aws_access_key_id=os.getenv("AWS_ACCESS_KEY"),
                   aws_secret_access_key=os.getenv("AWS_SECRET_KEY"))
     
-    
+    images= []
     for i in range (len(props)):
         list = []
         list.append(props[i]['img_front'])
         list.append(props[i]['img_back'])
         list.append(props[i]['img_name'])
         
-        images= []
+        image_dict = {}
         for j in range (len(list)):
             
             response = s3.get_object(Bucket = 'mpmedicinedb', Key = list[j])
             image_data = response['Body'].read()
             image = Image.open(io.BytesIO(image_data))
-            images.append(image)
-            
-        blank_img = Image.new("RGB", (1920,1080), (255, 255, 255))
-        newsize = (450,450)
-        frnt_img = images[1].resize(newsize)
-        
-        Image.Image.paste(blank_img,frnt_img,(450,450))
-        # blank_img.show()
+            image_dict[j] = image
+        images.append(image_dict)
+    text = text_script(props)
+    buildImage(props,images,text)
 
 import_image(input)
 
