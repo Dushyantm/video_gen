@@ -32,7 +32,10 @@ def text_script(list):
             type = type[0].lower() + type[1:]
 
         #concatenating all the time in a string
-        time_ = " and ".join(time).lower() 
+        if len(time) > 2:
+            time_ = ", ".join(time[:-1]).lower() + " and " + time[-1].lower()
+        else:
+            time_ = " and ".join(time).lower()
 
         medicine_data = num2words(quantity).capitalize() + " " + type + " " + sbtit + " " + time_ + " " + ba + " " + "the meal. " + this + sbtft + " " + num2words(days) + days_
         
