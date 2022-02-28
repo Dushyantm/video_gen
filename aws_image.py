@@ -3,8 +3,7 @@ from PIL import Image, ImageDraw, ImageFont
 import io
 import os
 from dotenv import load_dotenv
-from image import buildImage
-from text_script import text_script
+
 
 load_dotenv()
 
@@ -32,8 +31,8 @@ def import_image(props):
             image = Image.open(io.BytesIO(image_data))
             image_dict[j] = image
         images.append(image_dict)
-    text = text_script(props)
-    buildImage(props,images,text)
+    return images
+    # buildImage(props,images,text)
 
-import_image(input)
+
 

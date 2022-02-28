@@ -2,7 +2,7 @@
 from PIL import Image, ImageDraw, ImageFont
 
 
-def buildImage(list, images ,text):
+def buildImages(list, images ,text):
     myFont = ImageFont.truetype('font/Roboto-Regular.ttf', 65)
     myFont1 = ImageFont.truetype('font/Roboto-Bold.ttf', 65)
     
@@ -21,10 +21,13 @@ def buildImage(list, images ,text):
         name1 = name1.resize(name_size)
         f1 = ImageDraw.Draw(bg_image)        
         f1.text((700,120), drug_name, font=myFont1,fill=(255,0,0))
+        #condition to check language and use font accordingly.
+        
         f1.text((950, 230), text_str, font = myFont,  fill =(0, 0, 0))
         Image.Image.paste(bg_image,frnt1,(120,250))
         Image.Image.paste(bg_image,back1,(470,250))
         Image.Image.paste(bg_image,name1,(300,610))
         bg_image.show()
+        bg_image.save('img2')
         frames.append(bg_image)
-    print(frames)
+    return frames
