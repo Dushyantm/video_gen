@@ -1,4 +1,3 @@
-
 from PIL import Image, ImageDraw, ImageFont
 
 
@@ -31,3 +30,5 @@ def buildImages(list, images ,text):
         bg_image.save('img2')
         frames.append(bg_image)
     return frames
+
+buildImages()

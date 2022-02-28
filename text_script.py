@@ -159,12 +159,12 @@ def getSentence(list):
     for i in range(len(list)):
         language = list[i]["language"]
     #if the language is english in input then use this function to get the medicine data in english
-        if language == "english":
+        if language == "English":
             medicine_data = get_medicine_data_Eng(list, i)
             # print(medicine_data)
             list1.append(medicine_data)
         #if the language is marathi in input then use this function to get the medicine data in marathi
-        elif language == "marathi":
+        elif language == "Marathi":
             medicine_data = get_medicine_data_Marathi(list, i)
             # print(medicine_data)
             list1.append(medicine_data)
