@@ -25,7 +25,7 @@ def build_video(input):
     text = getSentence(list)
 
     #use drug images and text to build frames
-    frames = buildImages(list, aws_image,text)
+    frames = buildImages(list, aws_image,text )
 
     final_video = videoGen(frames,audio_list)
     
