@@ -4,9 +4,9 @@ import gtts
 
 
 
-def generate_audio(meds,sentences):
+def audio_clip(meds,sentences):
     audio_clips = []
-    #get language from first record
+
     for i in range(len(meds)):
         lang = meds[i]['language']
 
