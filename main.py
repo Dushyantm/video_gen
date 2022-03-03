@@ -25,7 +25,7 @@ def build_video(input):
     audio_list = audio_clip(list,text)
 
     #use drug images and text to build frames
-    frames = buildImages(list, aws_image,text)
+    frames = buildImages(list, aws_image,text )
 
     final_video = video_generator(frames,audio_list)
     

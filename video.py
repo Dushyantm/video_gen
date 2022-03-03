@@ -5,7 +5,7 @@ from PIL import Image
 import numpy as np
 
 
-#this function changes the PIL image to numpy array
+#this function changes the PIL image to numpy array 
 def image_to_array(frames):
     rgb_frames = [i.convert('RGB') for i in frames]
     frames_array = [np.array(i).reshape(i.size[1],i.size[0],3) for i in rgb_frames]
