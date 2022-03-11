@@ -1,6 +1,6 @@
 from PIL import Image, ImageDraw
 from audio import audio_clip
-from text_script import getSentence
+import text_script 
 from aws_image import import_image
 from buildImage import buildImages
 from video import video_generator
@@ -15,18 +15,20 @@ def build_video(input):
         data = dict["data"]
         list.append(data)
     
-    #fetch drug images
+    # fetch drug images
     aws_image = import_image(list)
 
-    #generate text
-    text = getSentence(list)
+    #generate text sentences
+    sentences = text_script.getSentence(list)
 
     #generate audio
-    audio_list = audio_clip(list,text)
+    # audio_list = audio_clip(list,text)
+    audio_clips = audio_clip(list,sentences)
 
     #use drug images and text to build frames
-    frames = buildImages(list, aws_image,text )
-
-    final_video = video_generator(frames,audio_list)
+    frames = buildImages(list, aws_image, sentences)
+    
+    #generate final video
+    final_video = video_generator(audio_clips)
     
 build_video(input)

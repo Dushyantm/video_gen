@@ -5,7 +5,7 @@ import gtts
 
 def audio_clip(meds, sentences):
     audio_clips = []
-
+    print(meds)
     for i in range(len(meds)):
         lang = meds[i]['language']
 
