@@ -17,6 +17,6 @@ def home():
 def send_video():
 
     input = request.get_json()['data']
-    #video = numpy.array(main.build_video(input))
-    file = {"video":"video generated"}
-    return jsonify(file)
+    video = main.build_video(input)
+    file = open('final.mp4','rb').read()
+    return jsonify({'video_data' : file})

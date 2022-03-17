@@ -59,7 +59,7 @@ def video_generator(audio_clips):
     
     #concatenate the video clips
     final = concatenate_videoclips(video_clips,method='compose')
-    #final.write_videofile('final.mp4',fps=1)
+    final.write_videofile('final.mp4',fps=1)
 
     return final
 
