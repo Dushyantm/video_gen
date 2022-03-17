@@ -5,8 +5,7 @@ from PIL import Image
 import numpy as np
 import glob
 
-
-#this function changes the PIL image to numpy array 
+#this function changes the PIL image to numpy array
 def image_to_array(list):
     rgb_frames = [i.convert('RGB') for i in list]
     frames_arr = [np.array(i).reshape(i.size[1],i.size[0],3) for i in rgb_frames]
@@ -60,7 +59,7 @@ def video_generator(audio_clips):
     
     #concatenate the video clips
     final = concatenate_videoclips(video_clips,method='compose')
-    final.write_videofile('final.mp4',fps=1)
+    #final.write_videofile('final.mp4',fps=1)
 
     return final
 
