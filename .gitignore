@@ -1,2 +1,4 @@
 /.env
 /images
+/.idea
+/__pycache__
