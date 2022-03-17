@@ -18,5 +18,5 @@ def send_video():
 
     input = request.get_json()['data']
     video = main.build_video(input)
-    file = open('final.mp4','rb').read()
+    #file = open('final.mp4','rb').read()
     return jsonify({'video_data' : file})
