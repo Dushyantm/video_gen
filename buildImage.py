@@ -31,7 +31,7 @@ def buildImages(list, images ,text):
         Image.Image.paste(bg_image, back1, (470,250))
         Image.Image.paste(bg_image, name1, (300,610))
         # bg_image.show()
-        bg_image.save('img'+str(i)+'.png')
+        #bg_image.save('img'+str(i)+'.png')
         frames.append(bg_image)
         
     return frames
