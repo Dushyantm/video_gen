@@ -24,8 +24,9 @@ def buildImages(list, images ,text):
         if(list[i]['language']=='Hindi'):
             f1.text((950, 230), text_str, font=MaHiFont, fill=(0, 0, 0))
         if(list[i]['language']=='Marathi'):
-            f1.text((950, 230), text_str, font=MaHiFont, fill=(0, 0, 0)) 
-        #f1.text((950, 230), text_str, font = myFont,  fill =(0, 0, 0))
+            f1.text((950, 230), text_str, font=MaHiFont, fill=(0, 0, 0))
+        else:
+            f1.text((950, 230), text_str, font = myFont,  fill =(0, 0, 0))
         Image.Image.paste(bg_image, frnt1, (120,250))
         Image.Image.paste(bg_image, back1, (470,250))
         Image.Image.paste(bg_image, name1, (300,610))
