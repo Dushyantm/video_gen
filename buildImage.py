@@ -5,7 +5,7 @@ def buildImages(list, images ,text):
     myFont = ImageFont.truetype('font/Roboto-Regular.ttf', 65)
     myFont1 = ImageFont.truetype('font/Roboto-Bold.ttf', 65)
     MarathiFont = ImageFont.truetype('font/Nirmala.ttf', 65)
-    HindiFont = ImageFont.truetype('font/Mukta-Light.ttf',65)
+    HindiFont = ImageFont.truetype('font/Mangal_Regular.ttf',65)
     frames = []
 
     for i in range (len(list)):
