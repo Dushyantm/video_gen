@@ -4,8 +4,8 @@ from PIL import Image, ImageDraw, ImageFont
 def buildImages(list, images ,text):
     myFont = ImageFont.truetype('font/Roboto-Regular.ttf', 65)
     myFont1 = ImageFont.truetype('font/Roboto-Bold.ttf', 65)
-    MarathiFont = ImageFont.truetype('font/Nirmala.ttf', 65)
-    HindiFont = ImageFont.truetype('font/Mangal_Regular.ttf',65)
+    MarathiFont = ImageFont.truetype('font/Nirmala.ttf', 65,layout_engine=ImageFont.LAYOUT_RAQM)
+    #HindiFont = ImageFont.truetype('font/Mangal_Regular.ttf',65,layout_engine=ImageFont.LAYOUT_RAQM)
     frames = []
 
     for i in range (len(list)):
@@ -24,7 +24,7 @@ def buildImages(list, images ,text):
         f1.text((700,120), drug_name, font=myFont1,fill=(255,0,0))
         #condition to check language and use font accordingly.
         if(list[i]['language']=='Hindi'):
-            f1.text((950, 230), text_str, font=HindiFont, fill=(0, 0, 0))
+            f1.text((950, 230), text_str, font=MarathiFont, fill=(0, 0, 0))
         if(list[i]['language']=='Marathi'):
             f1.text((950, 230), text_str, font=MarathiFont, fill=(0, 0, 0))
         else:

@@ -1,9 +1,9 @@
 from moviepy.editor import *
 import text_script
-from audio import audio_clip
 from PIL import Image
 import numpy as np
 import glob
+import io
 
 
 def image_to_array(list):

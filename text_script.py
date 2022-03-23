@@ -121,14 +121,14 @@ def get_medicine_data_Marathi(list, i):
         #convert english to marathi for the time
         time_marathi = {
             "Morning": "सकाळचा नाश्त्या\n",
-            "Afternoon": "दुपारच्या जेवणा",
-            "Evening": "रात्रीच्या जेवणा"
+            "Afternoon": "दुपारच्या जेवणा\n",
+            "Evening": "रात्रीच्या जेवणा\n"
             # "Night": ""
         }
         time = [time_marathi[i] + " " + ba for i in time]
         time = " आणि ".join(time) 
 
-        medicine_data = hee + " " + quantity + " " + type + " " + time + " "  + "घ्यावी. " + hee + " " + type + " " + days + "\n" + diwas +" घ्यावी."
+        medicine_data = hee + " " + quantity + " " + type + " " + time + " " + "घ्यावी." + hee + " " + type + " " + days + "\n" + diwas +" घ्यावी."
         
         return medicine_data
         
