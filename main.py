@@ -17,7 +17,7 @@ def build_video(input):
         list.append(data)
 
     # fetch drug images
-    #aws_image = import_image(list)
+    aws_image = import_image(list)
 
     #generate text sentences
     sentences = text_script.getSentence(list)
@@ -27,7 +27,7 @@ def build_video(input):
     audio_clips = audio_clip(list,sentences)
 
     #use drug images and text to build frames
-    #frames = buildImages(list, aws_image, sentences)
+    frames = buildImages(list, aws_image, sentences)
 
     #generate final video
     final_video = video_generator(audio_clips,frames)
