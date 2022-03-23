@@ -20,12 +20,12 @@ def buildImages(list, images ,text):
         frnt1 = frnt1.resize(newsize)
         back1 = back1.resize(newsize)
         name1 = name1.resize(name_size)
-        f1 = ImageDraw.Draw(bg_image)        
+        f1 = ImageDraw.Draw(bg_image)
         f1.text((700,120), drug_name, font=myFont1,fill=(255,0,0))
         #condition to check language and use font accordingly.
-        if(list[i]['language']=='Hindi'):
-            f1.text((950, 230), text_str, font=MarathiFont, fill=(0, 0, 0))
         if(list[i]['language']=='Marathi'):
+            f1.text((950, 230), text_str, font=MarathiFont, fill=(0, 0, 0))
+        elif(list[i]['language']=='Hindi'):
             f1.text((950, 230), text_str, font=MarathiFont, fill=(0, 0, 0))
         else:
             f1.text((950, 230), text_str, font = myFont,  fill =(0, 0, 0))
