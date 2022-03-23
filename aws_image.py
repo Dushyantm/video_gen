@@ -12,7 +12,7 @@ input = [{'patientId': '60efb3be62512a00158190ca', 'drug_name': 'Ceemox-250', 't
 def import_image(props):
 
     s3 = boto3.client("s3", 
-                  region_name='ap-southeast-1', 
+                  region_name=os.getenv('S3_REGION'),
                   aws_access_key_id=os.getenv("AWS_ACCESS_KEY"),
                   aws_secret_access_key=os.getenv("AWS_SECRET_KEY"))
     

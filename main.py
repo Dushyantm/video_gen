@@ -30,7 +30,7 @@ def build_video(input):
     #frames = buildImages(list, aws_image, sentences)
 
     #generate final video
-    final_video = video_generator(audio_clips)
+    final_video = video_generator(audio_clips,frames)
 
     return final_video
 

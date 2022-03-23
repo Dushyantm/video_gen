@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, json, request
+from flask import Flask, jsonify, json, request,send_file
 from flask_cors import CORS,cross_origin
 import sys
 import main
@@ -19,10 +19,10 @@ def send_video():
 
     input = request.get_json()['data']
     video = main.build_video(input)
-    file = open('final.mp4','rb')
-    file.seek(0)
-    data = b64encode(file.read())
-    base64_string = data.decode('utf-8')
-    raw_data = {'video':base64_string}
-    data = json.dumps(raw_data)
-    return data
+    #file = open('final.mp4','rb')
+    #file.seek(0)
+    #data = b64encode(file.read())
+    #base64_string = data.decode('utf-8')
+    #raw_data = {'video':base64_string}
+    #data = json.dumps(raw_data)
+    return send_file('final.mp4')
