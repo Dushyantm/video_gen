@@ -20,6 +20,7 @@ def getSentence(list):
             list1.append(medicine_data)
         
         elif language == "Hindi":
+
             medicine_data = get_medicine_data_Hindi(list, i)
             list1.append(medicine_data)
 
@@ -123,7 +124,7 @@ def get_medicine_data_Marathi(list, i):
 
         #convert english to marathi for the time
         time_marathi = {
-            "Morning": "सकाळचा नाश्त्या",
+            "Morning": "सकाळचा नाश्त्या\n",
             "Afternoon": "दुपारच्या जेवणा",
             "Evening": "रात्रीच्या जेवणा"
             # "Night": ""
@@ -131,7 +132,7 @@ def get_medicine_data_Marathi(list, i):
         time = [time_marathi[i] + " " + ba for i in time]
         time = " आणि ".join(time) 
 
-        medicine_data = hee + " " + quantity + " " + type + " " + time + " "  + "घ्यावी. " + hee + " " + type + " " + days + " " + diwas +" घ्यावी."
+        medicine_data = hee + " " + quantity + " " + type + " " + time + " "  + "घ्यावी. " + hee + " " + type + " " + days + "\n" + diwas +" घ्यावी."
         
         return medicine_data
         
@@ -144,7 +145,7 @@ def get_medicine_data_Hindi(list, i):
         days = list[i]["days"]
         hee = "यह"
         diwas = "दिन "
-        tlh = " तक लेनी है।"
+        tlh = "तक लेनी है।"
 
 
         if int(quantity) > 1:
@@ -223,10 +224,10 @@ def get_medicine_data_Hindi(list, i):
         quantity = num2hindi[quantity]
 
         if int(days) > 1:
-            diwas = "दीनो"
+            diwas = "दीनो "
 
         if int(days) < 1:    
-            tlh = " लेनी है।"
+            tlh = "लेनी है।"
         #convert english to marathi for the days from 1 t0 100
 
         days = num2hindi[days]
@@ -241,8 +242,8 @@ def get_medicine_data_Hindi(list, i):
         time = [time_hindi[i] + " " for i in time]
         time = " और ".join(time) 
 
-        medicine_data = hee + " " + quantity + " " + type + " " + time + " " + ba + " लेनी है। " + hee + " " + type + " " + days + " " + diwas + tlh
-        
+        medicine_data = hee + " " + quantity + " " + type + " " + time + "\n" + ba + " लेनी है।\n" + hee + " " + type + " " + days + " " + diwas + tlh
+        print(medicine_data)
         return medicine_data
     
 def get_medicine_data_Eng(list,i):
@@ -250,7 +251,7 @@ def get_medicine_data_Eng(list,i):
         type = list[i]["type"]
         time = list[i]["time"]
         quantity = list[i]["quantity"]
-        sbtit = "should be taken in the"
+        sbtit = "should be taken\nin the"
         sbtft = "should be taken for"
         ba = list[i]["ba"]
         days = list[i]["days"]
@@ -280,7 +281,7 @@ def get_medicine_data_Eng(list,i):
         else:
             time_ = " and ".join(time).lower()
 
-        medicine_data = num2words(quantity).capitalize() + " " + type + " " + sbtit + " " + time_ + " " + ba + " " + "the meal. " + this + sbtft + " " + num2words(days) + days_
+        medicine_data = num2words(quantity).capitalize() + " " + type + " " + sbtit + " " + time_ + "\n" + ba + " " + "the meal.\n" + this + sbtft + "\n" + num2words(days) + days_
         #convert medicine_data into marathi language 
         # print(medicine_data)
         return medicine_data
