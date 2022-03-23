@@ -5,7 +5,7 @@ from PIL import Image
 import numpy as np
 import glob
 
-#this function changes the PIL image to numpy array
+
 def image_to_array(list):
     rgb_frames = [i.convert('RGB') for i in list]
     frames_arr = [np.array(i).reshape(i.size[1],i.size[0],3) for i in rgb_frames]
@@ -14,9 +14,6 @@ def image_to_array(list):
 
 def video_generator(audio_clips,frames):
 
-    #to get the medicine images
-    #list1 = ['d.png', 'c.png']
-    #list1 = [Image.open(i) for i in list1]
 
     #to get the starting images for every video
     list = []
@@ -62,4 +59,5 @@ def video_generator(audio_clips,frames):
 
     return final
 
-# video_generator(list, audio_clips)
+if __name__ == "__main__":
+    pass

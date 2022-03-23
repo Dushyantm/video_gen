@@ -26,3 +26,6 @@ def send_video():
     #raw_data = {'video':base64_string}
     #data = json.dumps(raw_data)
     return send_file('final.mp4')
+
+if __name__ == "__main__":
+    app.run()

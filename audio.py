@@ -70,3 +70,6 @@ def marathi_audio(sentence):
 
     # append the generated audio cli
     return clip
+
+if __name__ == "__main__":
+    pass

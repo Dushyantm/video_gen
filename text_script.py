@@ -1,13 +1,9 @@
 from num2words import num2words
 import json
 
-
-input = [{'patientId': '60efb3be62512a00158190ca', 'drug_name': 'Ceemox-250', 'type': 'Capsule', 'time': ['Morning'], 'quantity': '5', 'ba': 'before', 'days': '15', 'img_front': 'MP_medicineDB/Capsule/Ceemox-250_Anrose Pharma_Saralife Healthcare_Front.jpg', 'img_back': 'MP_medicineDB/Capsule/Ceemox-250_Anrose Pharma_Saralife Healthcare_Back.jpg', 'img_name': 'MP_medicineDB/Capsule/Ceemox-250_Anrose Pharma_Saralife Healthcare_Name.jpg', 'spcl_intr': ''}, {'patientId': '60efb3be62512a00158190ca', 'drug_name': 'Norcin-400', 'type': 'Tablet', 'time': ['Morning', 'Evening'], 'quantity': '2', 'ba': 'after', 'days': '10', 'img_front': 'MP_medicineDB/Tablet/Norcin-400_Omega Biotech_Front.jpg', 'img_back': 'MP_medicineDB/Tablet/Norcin-400_Omega Biotech_Back.jpg', 'img_name': 'MP_medicineDB/Tablet/Norcin-400_Omega Biotech_Name.jpg', 'spcl_intr': ''}]
-medicine_data = " "
-list1 = []
-
 def getSentence(list):
-
+    list1 = []
+    medicine_data = ""
     for i in range(len(list)):
         language = list[i]["language"]
 
@@ -20,12 +16,12 @@ def getSentence(list):
             list1.append(medicine_data)
         
         elif language == "Hindi":
-
             medicine_data = get_medicine_data_Hindi(list, i)
             list1.append(medicine_data)
 
         else:
             print("Please enter the correct language")
+
     return list1
 
 def get_medicine_data_Marathi(list, i):
@@ -243,7 +239,7 @@ def get_medicine_data_Hindi(list, i):
         time = " और ".join(time) 
 
         medicine_data = hee + " " + quantity + " " + type + " " + time + "\n" + ba + " लेनी है।\n" + hee + " " + type + " " + days + " " + diwas + tlh
-        print(medicine_data)
+
         return medicine_data
     
 def get_medicine_data_Eng(list,i):
@@ -285,3 +281,6 @@ def get_medicine_data_Eng(list,i):
         #convert medicine_data into marathi language 
         # print(medicine_data)
         return medicine_data
+
+if __name__ == "__main__":
+    pass
