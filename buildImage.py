@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 
+#fix issue: hindi text render
 def buildImages(list, images ,text):
     myFont = ImageFont.truetype('font/Roboto-Regular.ttf', 65)
     myFont1 = ImageFont.truetype('font/Roboto-Bold.ttf', 65)
