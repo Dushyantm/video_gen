@@ -33,7 +33,8 @@ def build_video(input):
     frames = buildImage.buildImages(list, images, sentences)
 
     #generate final video
-    final_video = video.video_generator(audio_clips,frames)
+    id = input[0]['data']['patientId']
+    final_video = video.video_generator(audio_clips,frames,id)
 
     return final_video
 

@@ -12,7 +12,7 @@ def image_to_array(list):
 
     return frames_arr
 
-def video_generator(audio_clips,frames):
+def video_generator(audio_clips,frames,patient_id):
 
 
     #to get the starting images for every video
@@ -55,7 +55,7 @@ def video_generator(audio_clips,frames):
 
     #concatenate the video clips
     final = concatenate_videoclips(video_clips,method='compose')
-    final.write_videofile('final.mp4',fps=1)
+    final.write_videofile('mmp/'+patient_id+'.mp4',fps=1)
 
     return final
 

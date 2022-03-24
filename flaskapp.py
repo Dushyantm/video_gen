@@ -2,9 +2,16 @@ from flask import Flask, jsonify, json, request,send_file
 from flask_cors import CORS,cross_origin
 import sys
 import main
-from base64 import b64encode
-import json
-import numpy
+import boto3
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY')
+AWS_ACCESS_SECRET = os.getenv('AWS_SECRET_KEY')
+REGION = os.getenv('S3_REGION')
+
 app = Flask(__name__)
 CORS(app)
 
@@ -13,19 +20,30 @@ CORS(app)
 def home():
     return jsonify({'Error':'Request sent to invalid path'})
 
-@app.route('/video', methods=['POST'])
+@app.route('/upload_video', methods=['POST'])
 @cross_origin()
 def send_video():
 
     input = request.get_json()['data']
+    patient_id = input[0]['data']['patientId']
     video = main.build_video(input)
-    #file = open('final.mp4','rb')
-    #file.seek(0)
-    #data = b64encode(file.read())
-    #base64_string = data.decode('utf-8')
-    #raw_data = {'video':base64_string}
-    #data = json.dumps(raw_data)
-    return send_file('final.mp4')
+
+    s3 = boto3.resource(
+        service_name='s3',
+        region_name=REGION,
+        aws_access_key_id=AWS_ACCESS_KEY,
+        aws_secret_access_key=AWS_ACCESS_SECRET
+    )
+    if video:
+        bucket = s3.Bucket('mpmedicinedb')
+        try:
+            bucket.upload_file(Filename='mmp/'+patient_id+'.mp4', Key='generated_MP/'+patient_id+'.mp4')
+            return jsonify({'OK':'The file has been successfully uploaded.'})
+        except:
+            return jsonify({'error':'Error encountered.Try again.'})
+    else:
+        return jsonify({'error':'The video generation failed.'})
+
 
 if __name__ == "__main__":
     app.run()
