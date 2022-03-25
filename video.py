@@ -55,8 +55,7 @@ def video_generator(audio_clips,frames,patient_id):
 
     #concatenate the video clips
     final = concatenate_videoclips(video_clips,method='compose')
-    path = os.path.join('mmp', patient_id + '.mp4')
-    final.write_videofile(path,fps=1)
+    final.write_videofile(patient_id + '.mp4',fps=1)
 
     return final
 
