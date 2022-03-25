@@ -2,8 +2,8 @@ from moviepy.editor import *
 import text_script
 from PIL import Image
 import numpy as np
-import glob
 import io
+import os
 
 
 def image_to_array(list):
@@ -55,7 +55,8 @@ def video_generator(audio_clips,frames,patient_id):
 
     #concatenate the video clips
     final = concatenate_videoclips(video_clips,method='compose')
-    final.write_videofile('mmp/'+patient_id+'.mp4',fps=1)
+    path = os.path.join('mmp', patient_id + '.mp4')
+    final.write_videofile(path,fps=1)
 
     return final
 
