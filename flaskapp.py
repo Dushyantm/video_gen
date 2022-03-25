@@ -38,7 +38,7 @@ def send_video():
     if video:
         bucket = s3.Bucket('mpmedicinedb')
         try:
-            bucket.upload_file(Filename='mmp/'+patient_id+'.mp4', Key='generated_MP/'+patient_id+'.mp4')
+            bucket.upload_file(Filename=patient_id+'.mp4', Key='generated_MP/'+patient_id+'.mp4')
             os.remove(patient_id+'.mp4')
             return jsonify({'OK':'The file has been successfully uploaded.'})
         except:
